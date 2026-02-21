@@ -29,7 +29,7 @@ MLOps 자동화 파이프라인 **개념 및 전체 작동 방식**에 대해 �
    - **서버 재시작 없이 모델만 갈아끼우는(무중단) 방식**을 쓸 수 있다.
 
 대충 흐름 요약하면
-[데이터 수집/처리/학습 - mlflow에 기록 - fastapi가 mlflow에 있는거 서빙] - 이 과정을 airflow로 짜는거임
+{데이터 수집/처리/학습 - mlflow에 기록 - fastapi가 mlflow에 있는거 서빙} - 이 과정을 airflow로 짜는거임
 ---
 
 ## 각 구성요소 역할
@@ -96,12 +96,13 @@ my_mlops_project/
     ├── Dockerfile
     ├── requirements.txt
     └── main.py
-
+```
 
 ### B) 실무용 Multi-repo(역할별로 레포 분리한거)
 
 팀 협업/권한 분리/배포 단위 분리에 좋음 (실제 회사에서 흔한 형태라고 함)
 
+```text
 1) ml-model-training (AI/DS 팀)
 ml-model-training/
 ├── Dockerfile
@@ -110,9 +111,11 @@ ml-model-training/
     ├── extract.py
     ├── preprocess.py
     └── train.py
+```
 
 결과물: 훈련용 Docker 이미지(ECR/DockerHub 등에 push)
 
+```text
 2) ml-api-serving (Backend/ML Eng 팀)
 ml-api-serving/
 ├── Dockerfile
@@ -120,9 +123,11 @@ ml-api-serving/
 └── src/
     ├── main.py
     └── schemas.py
+```
 
 결과물: 서빙용 Docker 이미지 + 배포
 
+```text
 3) mlops-airflow-infra (DevOps/Data Eng 팀)
 mlops-airflow-infra/
 ├── docker-compose.yml   # 또는 k8s yaml
@@ -130,6 +135,7 @@ mlops-airflow-infra/
 │   └── daily_train_dag.py
 └── scripts/
     └── bootstrap.sh
+```
 
 하는 일: 스케줄(DAG) + 인프라 설정 + 환경변수 주입
 
