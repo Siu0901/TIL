@@ -321,4 +321,5 @@ ECS Fargate (instring-server 컨테이너)
 
 # tlqkf
 <img width="802" height="562" alt="image" src="https://github.com/user-attachments/assets/fc3d4312-20ce-4b51-88b1-c2a4be9a7a4c" />
+
 aws 비용 진짜 실화냐? 웅장이 가슴해진다. tlqkf 3시간 켰는데 30달라는 tlqkf 진짜 뭐하자는 거임? 제프 베조스 일 안하냐
