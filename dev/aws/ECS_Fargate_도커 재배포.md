@@ -29,7 +29,6 @@ aws ecr get-login-password --region us-east-1 | \
   [AWS_계정ID].dkr.ecr.us-east-1.amazonaws.com
 ```
 저거 리전 서울인줄 알고 계속 시도하다 끝에서 막혀서 왜인지 찾는데 고생했다. 리전 확인 잘해라.
----
 
 ### 3. 이미지 태그 변경
 
